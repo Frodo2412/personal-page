@@ -15,7 +15,7 @@ function NavLink(props: NavLinkProps) {
                 "after:content-[''] after:block after:m-auto after:w-0 after:h-1 after:transition-all duration-500 " +
                 "hover:after:w-full hover:after:bg-white hover:after:rounded-full hover:after:mt-1.5 hover:after:mb-0.5"
             }
-               href={props.href}>{props.text}
+                  href={props.href}>{props.text}
             </Link>
         </li>
     )
@@ -33,8 +33,12 @@ function Icon() {
                 width={80}
                 height={80}
             />
-            <div>
-                <h1 className={"text-3xl"}>Bruno Lemus</h1>
+            <div
+                className={"after:content-[''] after:block after:m-auto after:w-0 after:h-1 after:transition-all duration-500 " +
+                    "hover:after:w-full hover:after:bg-white hover:after:rounded-full hover:after:mt-1.5 hover:after:mb-0.5"}>
+                <h1 className={"text-3xl"}>
+                    Bruno
+                    Lemus</h1>
                 <h2>Functional Programming Evangelist</h2>
             </div>
         </div>
@@ -42,17 +46,13 @@ function Icon() {
 
 }
 
-export default function Navbar(props: { className: string }) {
+export default function Navbar(props: { className: string, links: NavLinkProps[] }) {
 
     return (
         <div className={"flex justify-between items-center " + props.className}>
             <Icon/>
             <ul className={"hidden md:flex flex-1 justify-around items-center h-auto"}>
-                <NavLink href={"#"} text={"Home"}/>
-                <NavLink href={"/posts/"} text={"Blog"}/>
-                <NavLink href={"#"} text={"Experience"}/>
-                <NavLink href={"#"} text={"Technologies"}/>
-                <NavLink href={"#"} text={"Contact"}/>
+                {props.links.map(link => <NavLink key={link.text} {...link} />)}
             </ul>
         </div>
     )
