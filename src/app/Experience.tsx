@@ -54,7 +54,7 @@ function Header() {
 
 export default function Experience() {
     return (
-        <div className={"flex flex-col justify-around content-around text-lg w-full"}>
+        <div id={"experience"} className={"flex flex-col justify-around content-around text-lg w-full"}>
             <Header/>
             <div className={"flex flex-row justify-center content-center text-black bg-white dark:bg-gray-900 p-10"}>
                 <ol className={"relative border-l border-gray-200 dark:border-gray-700 max-w-5xl"}>

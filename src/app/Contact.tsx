@@ -17,7 +17,7 @@ function ContactMethod(props: ContactInfo) {
 export default function Contact() {
 
     return (
-        <div className={"w-full min-h-10 flex flex-row justify-center items-center bg-gray-700 p-10"}>
+        <div id={"contact"} className={"w-full min-h-10 flex flex-row justify-center items-center bg-gray-700 p-10"}>
             <div className={"relative max-w-6xl"}>
                 <div className={"relative flex flex-col justify-center items-center border-r-2 border-gray-500"}>
                     {contactInfos.map((contactInfo, index) => <ContactMethod {...contactInfo} key={index}/>)}

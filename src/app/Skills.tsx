@@ -75,7 +75,7 @@ function Section(props: { title: string, technologies: Language[] }) {
 export default function Skills() {
 
     return (
-        <div className={"w-full min-h-10 flex flex-col justify-center items-center"}>
+        <div id={"skills"} className={"w-full min-h-10 flex flex-col justify-center items-center"}>
             <ol className={"relative max-w-6xl"}>
                 <li><Section title={"What I know"} technologies={knownTechnologies}/></li>
             </ol>
