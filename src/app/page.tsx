@@ -15,16 +15,15 @@ export default function Home() {
                 <Navbar
                     links={[
                         {href: '/blog/', text: "Blog"},
-                        {href: '#', text: "Experience"},
-                        {href: '#', text: "Technologies"},
-                        {href: '#', text: "Contact"},
+                        {href: '/#experience', text: "Experience"},
+                        {href: '/#skills', text: "Technologies"},
+                        {href: '/#contact', text: "Contact"},
                     ]}
                 />
                 <Hero/>
             </div>
 
-            <Experience/>
-
+            <Experience />
             <Skills/>
             <Contact/>
 
