@@ -1,15 +1,16 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/app/Hero";
-import Experience from "@/app/Experience";
-import Contact from "@/app/Contact";
-import Skills from "@/app/Skills";
+import LanguageSection from "@/app/LanguageSection";
 import background from "../../public/constellations.jpg";
+import {jobs} from "@/data/Jobs";
+import JobCard from "@/app/JobCard";
+import {knownTechnologies} from "@/data/Technologies";
 
 export default function Home() {
 
     return (
-        <main className={"dark:bg-gray-900 bg-white"}>
+        <main className={"bg-gray-900"}>
 
             <div className={"w-full bg-cover"} style={{backgroundImage: `url(${background.src})`}}>
                 <Navbar
@@ -23,9 +24,21 @@ export default function Home() {
                 <Hero/>
             </div>
 
-            <Experience />
-            <Skills/>
-            <Contact/>
+            <div id={"experience"} className={"flex flex-col justify-around content-around text-lg w-full"}>
+                <div className={"flex flex-row justify-center items-center bg-zinc-900"}>
+                    <h1 className="text-6xl font-bold text-white text-center bg-transparent m-10">Where I&apos;ve
+                        worked</h1>
+                </div>
+                <div
+                    className={"flex flex-row justify-center content-center text-black bg-gray-100 p-10"}>
+                    <ol className={"relative border-l border-gray-900 max-w-5xl"}>
+                        {jobs.map((job) =>
+                            <li key={job.company} className={"mb-10 ml-4"}>
+                                <JobCard key={job.title + job.company} {...job}/>
+                            </li>)}
+                    </ol>
+                </div>
+            </div>
 
         </main>
     )

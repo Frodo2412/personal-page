@@ -1,14 +1,16 @@
-'use client';
-
 import './globals.css';
-import {ThemeProvider} from "next-themes";
+import React from "react";
+import Contact from "@/app/Contact";
 
 export default function RootLayout(
     {children}: { children: React.ReactNode }
 ) {
     return (
         <html lang="en">
-        <body><ThemeProvider attribute={"class"}>{children}</ThemeProvider></body>
+        <body>
+        {children}
+        <Contact/>
+        </body>
         </html>
     )
 }

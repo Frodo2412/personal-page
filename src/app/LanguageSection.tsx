@@ -1,6 +1,5 @@
 import Technology from "@/model/Technology";
 import Language from "@/model/Language";
-import {knownTechnologies} from "@/data/Technologies";
 import Image from "next/image";
 
 function TechnologyCard(props: { tech: Technology }) {
@@ -28,7 +27,7 @@ function LanguageSection(props: { lang: Language }) {
 
     return (
         <div className={"pb-10"}>
-            <div className={"flex flex-row border-b-2 border-gray-900 dark:border-gray-50 mb-2 p-2 max-w-5xl"}>
+            <div className={"flex flex-row border-b-2 border-gray-50 mb-2 p-2 max-w-5xl"}>
                 <Image
                     className={"mr-5 rounded-md"}
                     src={props.lang.logo}
@@ -36,7 +35,7 @@ function LanguageSection(props: { lang: Language }) {
                     width={50}
                     height={50}
                 />
-                <h1 className={"text-gray-900 dark:text-white text-5xl"}>{props.lang.name}</h1>
+                <h1 className={"text-white text-5xl"}>{props.lang.name}</h1>
             </div>
             <div className={"flex flex-wrap"}>
                 {props.lang.technologies.map((technology: Technology) =>
@@ -51,12 +50,12 @@ function LanguageSection(props: { lang: Language }) {
 
 }
 
-function Section(props: { title: string, technologies: Language[] }) {
+export default function Section(props: { title: string, technologies: Language[] }) {
 
     return (
         <div className={"flex flex-row m-10"}>
             <div className={"border-r border-gray-200 dark:border-gray-700 mr-5 w-1/3"}>
-                <h1 className={"text-gray-900 dark:text-white text-5xl mr-5"}>{props.title}</h1>
+                <h1 className={"text-white text-5xl mr-5"}>My Tech Stack</h1>
             </div>
             <div className={"flex flex-col w-3/4"}>
                 {props.technologies.map((lang: Language) =>
@@ -66,19 +65,6 @@ function Section(props: { title: string, technologies: Language[] }) {
                     />
                 )}
             </div>
-        </div>
-    )
-
-}
-
-
-export default function Skills() {
-
-    return (
-        <div id={"skills"} className={"w-full min-h-10 flex flex-col justify-center items-center"}>
-            <ol className={"relative max-w-6xl"}>
-                <li><Section title={"What I know"} technologies={knownTechnologies}/></li>
-            </ol>
         </div>
     )
 
