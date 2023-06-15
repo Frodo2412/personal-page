@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/app/Hero";
-import background from "/constellations.jpg";
 import {jobs} from "@/data/Jobs";
 import JobCard from "@/app/JobCard";
 
@@ -10,7 +9,7 @@ export default function Home() {
     return (
         <main className={"bg-gray-900"}>
 
-            <div className={"w-full bg-cover"} style={{backgroundImage: `url(${background.src})`}}>
+            <div className={"w-full bg-cover"} style={{backgroundImage: "url(/constellations.jpg)"}}>
                 <Navbar
                     links={[
                         {href: '/blog/', text: "Blog"},
