@@ -5,7 +5,7 @@ export default function JobCard({title, link, company, companyLogo, date, activi
 
     return (
         <>
-            <div className="absolute w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-gray-900 bg-gray-100"></div>
+            <div className="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -left-1.5 border border-gray-100"></div>
             <div className={"flex flex-row"}>
                 <div className={"w-1/4"}>
                     <time

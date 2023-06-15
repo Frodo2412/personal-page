@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import {getSortedPostsData} from '@/lib/posts'
 import Layout from "@/components/Layout";
-import svg from "../../../public/svg/waves.svg";
 import Link from "next/link";
+import Date from "@/app/blog/Date";
 
 export default function page() {
 
@@ -18,20 +18,21 @@ export default function page() {
             </Head>
 
 
-            <div className={"flex flex-col bg-gray-900 m-0 p-0 bg-cover items-center"}
-                 style={{backgroundImage: `url(${svg.src}`}}>
+            <div className={"flex flex-col bg-gray-900 m-0 p-0 bg-cover items-center bg-[url(/svg/waves.svg)]"}>
 
-                <div
-                    className={"bg-gray-50 text-black p-10 rounded-md shadow-xl m-10 z-10 flex-1 w-fit align-start text-wrap max-w-xl"}>
-                    <h1 className={"mb-2 text-bg text-gray-600"}>LATEST</h1>
-                    <h1 className={"text-4xl text-gray-900"}>
-                        {lastPost?.title}
-                    </h1>
-                    <div className={"mt-5"}>
-                        <h1 className={"text-gray-500"}>{lastPost?.date}</h1>
-                        <p>{lastPost?.excerpt}</p>
+                <Link href={`blog/${lastPost?.id}`}>
+                    <div
+                        className={"bg-gray-50 text-black p-10 rounded-md shadow-xl m-10 z-10 flex-1 w-fit align-start text-wrap max-w-xl"}>
+                        <h1 className={"mb-2 text-bg text-gray-600"}>LATEST</h1>
+                        <h1 className={"text-4xl text-gray-900"}>
+                            {lastPost?.title}
+                        </h1>
+                        <div className={"mt-5"}>
+                            {lastPost ? <Date dateString={lastPost.date}/> : null}
+                            <p>{lastPost?.excerpt}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
 
             </div>
 

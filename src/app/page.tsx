@@ -1,11 +1,9 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/app/Hero";
-import LanguageSection from "@/app/LanguageSection";
-import background from "../../public/constellations.jpg";
+import background from "/constellations.jpg";
 import {jobs} from "@/data/Jobs";
 import JobCard from "@/app/JobCard";
-import {knownTechnologies} from "@/data/Technologies";
 
 export default function Home() {
 
@@ -31,7 +29,7 @@ export default function Home() {
                 </div>
                 <div
                     className={"flex flex-row justify-center content-center text-black bg-gray-100 p-10"}>
-                    <ol className={"relative border-l border-gray-900 max-w-5xl"}>
+                    <ol className={"relative border-l border-gray-300 max-w-5xl"}>
                         {jobs.map((job) =>
                             <li key={job.company} className={"mb-10 ml-4"}>
                                 <JobCard key={job.title + job.company} {...job}/>
