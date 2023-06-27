@@ -1,6 +1,6 @@
 import './globals.css';
 import React from "react";
-import Contact from "@/app/Contact";
+import Contact from "@/components/Contact";
 
 export default function RootLayout(
     {children}: { children: React.ReactNode }
