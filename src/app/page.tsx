@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <main className={"bg-gray-900"}>
 
-            <div className={"w-full bg-cover"} style={{backgroundImage: "url(/constellations.jpg)"}}>
+            <div className={"w-full bg-cover bg-[url(/constellations.jpg)]"}>
                 <Navbar
                     links={[
                         {href: '/blog/', text: "Blog"},
