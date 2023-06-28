@@ -13,6 +13,7 @@ module.exports = {
                 expand: 'expand 2s ease-in-out',
                 fadeDown: 'fadeDown 2s ease-in-out',
                 fadeRight: 'fadeRight 2s ease-in-out',
+                blur: 'blur 2s ease-in-out',
             },
 
             keyframes: {
@@ -25,8 +26,12 @@ module.exports = {
                     '100%': {opacity: '1', transform: 'translateY(0)'},
                 },
                 fadeRight: {
-                    '0%': {opacity: '0', transform: 'translateX(-50px)'},
+                    '0%': {opacity: '0', transform: 'translateX(-100px)'},
                     '100%': {opacity: '1', transform: 'translateX(0)'},
+                },
+                blur: {
+                    '0%': {filter: 'blur(3px)'},
+                    '100%': {filter: 'blur(0px)'},
                 }
             },
         },
